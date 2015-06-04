@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -83,22 +85,35 @@ public class NavigationDrawerFragment extends android.support.v4.app.Fragment {
 
     public void onClicksNavigationDrawerItems(int item)
     {
+        FragmentManager fm = ((ActionBarActivity) getActivity()).getSupportFragmentManager();
         int id = item;
         switch (id)
         {
             case 0:
-                startActivity(new Intent(getActivity(),AgendaActivity.class));
+                fm.beginTransaction()
+                        .replace(R.id.container, new AgendaFragment())
+                        .commit();
+                //startActivity(new Intent(getActivity(),AgendaActivity.class));
                 break;
             case 1:
-                startActivity(new Intent(getActivity(),NewsActivity.class));
+                fm.beginTransaction()
+                        .replace(R.id.container, new NewsFragment())
+                        .commit();
+                //startActivity(new Intent(getActivity(),NewsActivity.class));
                 break;
             case 2:
-                startActivity(new Intent(getActivity(),VideosActivity.class));
+                fm.beginTransaction()
+                        .replace(R.id.container, new VideosFragment())
+                        .commit();
+                //startActivity(new Intent(getActivity(),VideosActivity.class));
                 break;
             case 3:
                 /*startActivity(new Intent(getActivity(),SponsorsActivity.class));
                 break;
             case 4:*/
+                /*fm.beginTransaction()
+                        .replace(R.id.container, new MapsFragment())
+                        .commit();*/
                 startActivity(new Intent(getActivity(),MapsActivity.class));
                 break;
         }

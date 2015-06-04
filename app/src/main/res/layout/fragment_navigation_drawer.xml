@@ -8,7 +8,7 @@
         android:layout_width="280dp"
         android:layout_height="140dp"
         android:id="@+id/imageView"
-        android:src="@drawable/iocolor"/>
+        android:src="@drawable/iocolor_mini"/>
 
     <ListView android:id="@+id/mainList"
         android:layout_below="@+id/imageView"
