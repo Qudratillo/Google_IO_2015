@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kayumovabduaziz.eminemlyrics.NavigationDrawerFragment"
+    android:background="@color/textColorForAppBar">
+
+    <ImageView
+        android:layout_width="280dp"
+        android:layout_height="140dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/iocolor"/>
+
+    <ListView android:id="@+id/mainList"
+        android:layout_below="@+id/imageView"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+
+
+</RelativeLayout>
