@@ -74,8 +74,8 @@
       <file leaf-file-name="VideosFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/kayumovabduaziz/eminemlyrics/VideosFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6552632" vertical-offset="1468" max-vertical-offset="5525">
-              <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.33157894" vertical-offset="1302" max-vertical-offset="5525">
+              <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,8 +99,8 @@
       <file leaf-file-name="NavigationDrawerFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/kayumovabduaziz/eminemlyrics/NavigationDrawerFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2361" max-vertical-offset="2754">
-              <caret line="100" column="34" selection-start-line="100" selection-start-column="34" selection-end-line="100" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="2788">
+              <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -949,7 +949,6 @@
         <option value="$PROJECT_DIR$/local.properties" />
         <option value="$PROJECT_DIR$/src/main/res/layout/videos_row_layout.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_news.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/kayumovabduaziz/eminemlyrics/NavigationDrawerFragment.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_about.xml" />
         <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/kayumovabduaziz/eminemlyrics/NewsActivity.java" />
@@ -957,6 +956,7 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/agenda_row_layout.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/kayumovabduaziz/eminemlyrics/VideosActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_videos.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/kayumovabduaziz/eminemlyrics/NavigationDrawerFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/kayumovabduaziz/eminemlyrics/VideosFragment.java" />
       </list>
     </option>
@@ -1424,7 +1424,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1756,14 +1756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/kayumovabduaziz/eminemlyrics/NavigationDrawerFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="2754">
-          <caret line="100" column="34" selection-start-line="100" selection-start-column="34" selection-end-line="100" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_videos.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1156">
@@ -1775,10 +1767,18 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/kayumovabduaziz/eminemlyrics/NavigationDrawerFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="2788">
+          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/kayumovabduaziz/eminemlyrics/VideosFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6552632" vertical-offset="1468" max-vertical-offset="5525">
-          <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.33157894" vertical-offset="1302" max-vertical-offset="5525">
+          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

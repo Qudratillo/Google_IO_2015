@@ -20,7 +20,7 @@ import android.widget.ListView;
 
 public class NavigationDrawerFragment extends android.support.v4.app.Fragment {
 
-
+    int current;
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
 
@@ -87,35 +87,37 @@ public class NavigationDrawerFragment extends android.support.v4.app.Fragment {
     {
         FragmentManager fm = ((ActionBarActivity) getActivity()).getSupportFragmentManager();
         int id = item;
-        switch (id)
-        {
-            case 0:
-                fm.beginTransaction()
-                        .replace(R.id.container, new AgendaFragment())
-                        .commit();
-                //startActivity(new Intent(getActivity(),AgendaActivity.class));
-                break;
-            case 1:
-                fm.beginTransaction()
-                        .replace(R.id.container, new NewsFragment())
-                        .commit();
-                //startActivity(new Intent(getActivity(),NewsActivity.class));
-                break;
-            case 2:
-                fm.beginTransaction()
-                        .replace(R.id.container, new VideosFragment())
-                        .commit();
-                //startActivity(new Intent(getActivity(),VideosActivity.class));
-                break;
-            case 3:
+        if(current != id) {
+            current = id;
+            switch (id) {
+                case 0:
+                    fm.beginTransaction()
+                            .replace(R.id.container, new AgendaFragment())
+                            .commit();
+                    //startActivity(new Intent(getActivity(),AgendaActivity.class));
+                    break;
+                case 1:
+                    fm.beginTransaction()
+                            .replace(R.id.container, new NewsFragment())
+                            .commit();
+                    //startActivity(new Intent(getActivity(),NewsActivity.class));
+                    break;
+                case 2:
+                    fm.beginTransaction()
+                            .replace(R.id.container, new VideosFragment())
+                            .commit();
+                    //startActivity(new Intent(getActivity(),VideosActivity.class));
+                    break;
+                case 3:
                 /*startActivity(new Intent(getActivity(),SponsorsActivity.class));
                 break;
             case 4:*/
                 /*fm.beginTransaction()
                         .replace(R.id.container, new MapsFragment())
                         .commit();*/
-                startActivity(new Intent(getActivity(),MapsActivity.class));
-                break;
+                    startActivity(new Intent(getActivity(), MapsActivity.class));
+                    break;
+            }
         }
     }
 

@@ -82,7 +82,7 @@ public class VideosFragment extends Fragment implements AdapterView.OnItemClickL
         protected void onPostExecute(VideoContent result) {
             videosAdapter.add(result);
             if (videosCount <= videosAdapter.getCount()) {
-                getActivity().setProgressBarIndeterminateVisibility(false);
+                    getActivity().setProgressBarIndeterminateVisibility(false);
                 progressBar.setVisibility(View.GONE);
             }
         }
