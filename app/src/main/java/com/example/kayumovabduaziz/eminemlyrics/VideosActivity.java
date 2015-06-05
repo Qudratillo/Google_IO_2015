@@ -40,7 +40,7 @@ import java.util.ArrayList;
 
 
 public class VideosActivity extends ActionBarActivity implements AdapterView.OnItemClickListener{
-    String VIDEOS_URL = "https://gdata.youtube.com/feeds/api/playlists/PLOU2XLYxmsIKLNUPiFCWVtcO7mZRZ9MmS?v=2&alt=jsonc";
+    String VIDEOS_URL = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLOU2XLYxmsIKLNUPiFCWVtcO7mZRZ9MmS&key=AIzaSyAaYuqrDz7hSwoQwLi3FVs1hlezLjkTEgg";//"https://gdata.youtube.com/feeds/api/playlists/PLOU2XLYxmsIKLNUPiFCWVtcO7mZRZ9MmS?v=2&alt=jsonc";
     VideosAdapter videosAdapter;
     ProgressBar progressBar;
     int videosCount;
@@ -122,19 +122,49 @@ public class VideosActivity extends ActionBarActivity implements AdapterView.OnI
                     }
                     JSONObject json = new JSONObject(aVoid);
                     System.out.println(aVoid);
-                    JSONArray jsonArray = json.getJSONObject("data").getJSONArray("items");
+                    JSONArray jsonArray = json.getJSONArray("items");
                     videosCount = jsonArray.length();
                     //videosList = new ArrayList<VideoContent>();
                     for (int i = 0; i < jsonArray.length(); i++) {
                         VideoContent temp = new VideoContent();
                         String[] contents = new String[5];
-                        contents[0] = jsonArray.getJSONObject(i).getJSONObject("video").getString("title");
-                        contents[1] = jsonArray.getJSONObject(i).getJSONObject("video").getJSONObject("thumbnail").getString("sqDefault");
-                        contents[2] = String.format("%,d views", jsonArray.getJSONObject(i).getJSONObject("video").getInt("viewCount"));
-                        contents[3] = parseSeconds(jsonArray.getJSONObject(i).getJSONObject("video").getInt("duration"));
-                        contents[4] = jsonArray.getJSONObject(i).getJSONObject("video").getJSONObject("player").getString("mobile");
+                        contents[0] = jsonArray.getJSONObject(i).getJSONObject("snippet").getString("title");
+                        contents[1] = jsonArray.getJSONObject(i).getJSONObject("snippet").getJSONObject("thumbnails").getString("default");
+                        contents[2] = "Google Developers";
+                        contents[3] = jsonArray.getJSONObject(i).getJSONObject("resourceId").getString("videoId");
+                        contents[4] = "https://www.youtube.com/watch?v=" + contents[3];
+                        //contents[3] = parseSeconds(jsonArray.getJSONObject(i).getJSONObject("snippet").getInt("duration"));
+                        //contents[4] = jsonArray.getJSONObject(i).getJSONObject("snippet").getJSONObject("player").getString("mobile");
 
-                        new SetVideosListTask().execute(contents);
+                        new AsyncTask<String[], Void, String[]>() {
+                            @Override
+                            protected synchronized String[] doInBackground(String[]... params) {
+                                try {
+                                    HttpClient client = new DefaultHttpClient();
+                                    HttpUriRequest request = new HttpGet("https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=" +
+                                            params[0][3] + "&key=AIzaSyAaYuqrDz7hSwoQwLi3FVs1hlezLjkTEgg");
+                                    HttpResponse response = client.execute(request);
+                                    params[0][3] = EntityUtils.toString(response.getEntity());
+                                    return params[0];
+                                } catch (Exception ex) {
+
+                                }
+                                return null;
+                            }
+
+                            @Override
+                            protected void onPostExecute(String[] aVoid) {
+                                try {
+                                    JSONObject json = new JSONObject(aVoid[3]);
+                                    System.out.println(aVoid[3]);
+                                    JSONArray jsonArray = json.getJSONArray("items");
+                                    aVoid[2] = String.format("%,d views", jsonArray.getJSONObject(0).getJSONObject("contentDetails").getInt(""));
+                                    aVoid[3] = parseSeconds(jsonArray.getJSONObject(0).getJSONObject("contentDetails").getInt("duration"));
+                                    //aVoid[4] = jsonArray.getJSONObject(0).getJSONObject("snippet").getJSONObject("player").getString("mobile");
+                                } catch (Exception ex) {}
+                                new SetVideosListTask().execute(aVoid);
+                            }
+                        }.execute(contents);
                     }
 
                 } catch (Exception ex) {
